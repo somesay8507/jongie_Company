@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+KR:wght@300;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="/" class="logo-container">
+            <div class="logo-mark">
+                <div class="paper paper-1"></div>
+                <div class="paper paper-2"></div>
+                <div class="paper paper-3"></div>
+            </div>
+            <div class="logo-text">
+                <span class="logo-main">종이나라</span>
+                <span class="logo-sub">JONGIENARA</span>
+            </div>
+        </a>
+
+        <nav class="main-nav">
+            <ul id="main-menu">
+                <li data-menuanchor="hero"><a href="#hero">시작하기</a></li>
+                <li data-menuanchor="products"><a href="#products">제품</a></li>
+                <li data-menuanchor="education"><a href="#education">교육</a></li>
+                <li data-menuanchor="experience"><a href="#experience">체험</a></li>
+                <li data-menuanchor="news"><a href="#news">뉴스</a></li>
+                <li data-menuanchor="community"><a href="#community">고객참여</a></li>
+                <li data-menuanchor="company"><a href="#company">회사소개</a></li>
+                <li class="mall-link"><a href="#"><i class="fas fa-shopping-cart"></i> 종이나라 몰</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-right">
+            <div class="utility-nav">
+                <a href="/">HOME</a> | <a href="#">ENGLISH</a> | <a href="#">CHINESE</a>
+            </div>
+            <div class="action-buttons">
+                <% if (typeof user !== 'undefined' && user) { %>
+                    <span class="btn-sm" style="background: transparent; color: #333; font-weight: 700;">
+                        <i class="fas fa-user-circle"></i> <%= user.name %>님
+                    </span>
+                    <a href="/logout" class="btn-sm btn-orange">로그아웃</a>
+                <% } else { %>
+                    <a href="/login" class="btn-sm btn-orange">로그인</a>
+                    <a href="/register" class="btn-sm btn-gray">회원가입</a>
+                <% } %>
+                <a href="/catalog" class="btn-sm btn-gray">카다로그</a>
+            </div>
+        </div>
+    </header>
+
+    <div id="fullpage">
+        <section class="section hero" id="sec-hero">
+            <div class="hero-image-container">
+                <img src="/images/origami_main.png" alt="Premium Origami Art" class="hero-floating-img">
+            </div>
+            <h1>상상하는 무엇이든,<br>종이로 만들 수 있어요!</h1>
+            <p>알록달록 색종이 친구들과 함께 창의력이 쑥쑥!<br>우리 친구들의 소중한 꿈을 종이나라가 함께 응원합니다.</p>
+            <div class="cta">
+                <a href="#products" class="btn btn-primary" onclick="fullpage_api.moveSectionDown(); return false;">브랜드
+                    살펴보기</a>
+            </div>
+        </section>
+
+        <!-- Section 2: 제품 -->
+        <section class="section sections" id="sec-products">
+            <div class="section-title reveal">
+                <h2>우수한 제품 라인업</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="grid">
+                <div class="card reveal">
+                    <i class="fas fa-scroll"></i>
+                    <h3>프리미엄 색종이</h3>
+                    <p>대한민국 No.1 품질로 전 세계 어린이의 꿈을 접습니다.</p>
+                </div>
+                <div class="card reveal">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>미술/창의 도구</h3>
+                    <p>안전하고 창의적인 미술 놀이를 위한 클레이와 도구들</p>
+                </div>
+                <div class="card reveal">
+                    <i class="fas fa-book"></i>
+                    <h3>종이접기 전문서</h3>
+                    <p>초보자부터 전문가까지 아우르는 단계별 가이드 북</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: 교육 -->
+        <section class="section sections" id="sec-education">
+            <div class="section-title reveal">
+                <h2>전문화된 교육 서비스</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="grid">
+                <div class="card reveal">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>전문 지도사 양성</h3>
+                    <p>체계적인 커리큘럼으로 종이문화 전문가를 육성합니다.</p>
+                </div>
+                <div class="card reveal">
+                    <i class="fas fa-school"></i>
+                    <h3>방문 교육 프로그램</h3>
+                    <p>학교, 유치원 등 교육 현장으로 찾아가는 창의 교실</p>
+                </div>
+                <div class="card reveal">
+                    <i class="fas fa-tv"></i>
+                    <h3>온라인 교육 센터</h3>
+                    <p>디지털 환경에서도 이어지는 생생한 종이접기 강의</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: 체험 -->
+        <section class="section info-section" id="sec-experience">
+            <div class="info-content reveal">
+                <div class="info-text">
+                    <div class="section-title" style="text-align: left; margin-bottom: 2rem;">
+                        <h2>종이 문화 체험 활동</h2>
+                        <div class="underline" style="margin: 0;"></div>
+                    </div>
+                    <p style="font-size: 1.2rem; color: #666;">종이박물관과 종이나라 놀이터에서 직접 만지고 체험하며 창의력을 키우는 특별한 시간을 선사합니다.</p>
+                </div>
+                <div class="info-image" style="background: url('/images/playground.png') center/cover;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: 뉴스 -->
+        <section class="section sections" id="sec-news">
+            <div class="section-title reveal">
+                <h2>종이나라 투데이</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="grid">
+                <div class="card reveal">
+                    <i class="fas fa-newspaper"></i>
+                    <h3>보도 자료</h3>
+                    <p>매스컴에 소개된 종이나라의 활약상</p>
+                </div>
+                <div class="card reveal">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>공지 사항</h3>
+                    <p>종이나라의 중요 소식을 가장 먼저 확인하세요.</p>
+                </div>
+                <div class="card reveal">
+                    <i class="fas fa-camera"></i>
+                    <h3>현장 스케치</h3>
+                    <p>생생한 행사와 이벤트의 순간을 담았습니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: 고객참여 -->
+        <section class="section sections" id="sec-community">
+            <div class="section-title reveal">
+                <h2>열린 소통 공간</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="grid">
+                <div class="card reveal">
+                    <i class="fas fa-user-edit"></i>
+                    <h3>아이디어 제안</h3>
+                    <p>고객님의 참신한 의견이 좋은 제품이 됩니다.</p>
+                </div>
+                <div class="card reveal">
+                    <i class="fas fa-trophy"></i>
+                    <h3>공모전 응모</h3>
+                    <p>창의력을 뽐낼 수 있는 다양한 기회</p>
+                </div>
+                <div class="card reveal">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>자주 묻는 질문</h3>
+                    <p>궁금한 점을 빠르게 해결해 드립니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: 회사소개 -->
+        <section class="section" id="sec-company">
+            <div class="company-container">
+                <div class="company-left">
+                    <div class="company-badge">SINCE 1972</div>
+                    <h2 class="company-title">색종이로<br><span>세상을 물들이다</span></h2>
+                    <div class="company-title-bar"></div>
+                    <p class="company-desc">
+                        1972년 창립 이래, 종이나라는 대한민국 색종이의 대명사로
+                        50년이 넘는 시간 동안 아이들의 창의력과 꿈에 색을 입혀왔습니다.
+                    </p>
+                    <p class="company-desc-sub">
+                        빨강, 노랑, 파랑… 알록달록한 색종이 한 장에 무한한 상상력과 가능성을 담아,
+                        종이접기 문화를 세계에 알리는 <strong>대한민국 대표 종이 문화 기업</strong>입니다.
+                    </p>
+                    <div class="company-stats">
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-flag"></i></div>
+                            <span class="stat-number">1972</span>
+                            <span class="stat-label">창립년도</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-users"></i></div>
+                            <span class="stat-number">7,000만+</span>
+                            <span class="stat-label">함께한 친구들</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-box-open"></i></div>
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">제품 라인업</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="company-right">
+                    <div class="company-image-frame">
+                        <!-- 색종이 팬 장식 -->
+                        <div class="color-fan">
+                            <div class="fan-piece" style="--fan-color: #ef4123; --fan-rotate: -15deg;"></div>
+                            <div class="fan-piece" style="--fan-color: #f37021; --fan-rotate: -9deg;"></div>
+                            <div class="fan-piece" style="--fan-color: #ffcc00; --fan-rotate: -3deg;"></div>
+                            <div class="fan-piece" style="--fan-color: #4caf50; --fan-rotate: 3deg;"></div>
+                            <div class="fan-piece" style="--fan-color: #0054a6; --fan-rotate: 9deg;"></div>
+                            <div class="fan-piece" style="--fan-color: #9c27b0; --fan-rotate: 15deg;"></div>
+                        </div>
+                        <img src="/images/origami_main.png" alt="종이접기 작품" class="company-origami-img">
+                    </div>
+                </div>
+            </div>
+            <footer class="company-footer">
+                <div class="footer-inner">
+                    <div class="footer-logo">
+                        <span class="footer-brand">종이나라</span>
+                        <span class="footer-brand-en">JONGIENARA</span>
+                    </div>
+                    <p class="footer-copy">&copy; 2024 JONGIENARA Co., Ltd. All rights reserved.</p>
+                </div>
+            </footer>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js"></script>
+    <script>
+        new fullpage('#fullpage', {
+            // Navigation
+            menu: '#main-menu',
+            lockAnchors: false,
+            anchors: ['hero', 'products', 'education', 'experience', 'news', 'community', 'company'],
+            navigation: true,
+            navigationPosition: 'right',
+            showActiveTooltip: false,
+
+            // Scrolling
+            css3: true,
+            scrollingSpeed: 700,
+            autoScrolling: true,
+            fitToSection: true,
+            scrollBar: false,
+            scrollOverflow: false,
+            easingcss3: 'cubic-bezier(0.645, 0.045, 0.355, 1.000)',
+
+            // Design
+            fixedElements: 'header',
+            paddingTop: '70px',
+
+            // Callbacks - 스크롤/클릭 모두에서 메뉴 동기화
+            afterLoad: function(origin, destination, direction) {
+                // 메뉴 하이라이트 동기화
+                var menuItems = document.querySelectorAll('#main-menu li[data-menuanchor]');
+                menuItems.forEach(function(item) {
+                    item.classList.remove('active');
+                });
+                var activeItem = document.querySelector('#main-menu li[data-menuanchor="' + destination.anchor + '"]');
+                if (activeItem) {
+                    activeItem.classList.add('active');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

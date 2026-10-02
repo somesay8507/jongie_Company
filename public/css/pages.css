@@ -1,0 +1,548 @@
+/* ========================================
+   서브페이지 공통 스타일
+   ======================================== */
+
+/* 알림 메시지 */
+.alert {
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: fadeInUp 0.3s ease;
+}
+
+.alert i {
+  font-size: 1rem;
+  display: inline-block;
+  margin: 0;
+  filter: none;
+}
+
+.alert-error {
+  background: rgba(239, 65, 35, 0.08);
+  color: #d32f2f;
+  border: 1px solid rgba(239, 65, 35, 0.15);
+}
+
+.alert-success {
+  background: rgba(76, 175, 80, 0.08);
+  color: #2e7d32;
+  border: 1px solid rgba(76, 175, 80, 0.15);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-body {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #f8f9fa 0%, #fff 40%, #fffbf2 100%);
+  overflow-y: auto;
+}
+
+.page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 0.8rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.back-home {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 20px;
+  border-radius: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.back-home:hover {
+  background: #ef4123;
+  color: white;
+  border-color: #ef4123;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(239, 65, 35, 0.2);
+}
+
+.page-main {
+  padding-top: 100px;
+  padding-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+/* ========================================
+   로그인 · 회원가입 폼
+   ======================================== */
+
+.form-card {
+  width: 100%;
+  max-width: 460px;
+  background: white;
+  border-radius: 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  margin-top: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.form-header {
+  text-align: center;
+  padding: 3rem 2.5rem 1.5rem;
+  background: linear-gradient(180deg, #fffbf2, transparent);
+}
+
+.form-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #ef4123, #f37021);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+  box-shadow: 0 8px 25px rgba(239, 65, 35, 0.25);
+}
+
+.form-icon.icon-green {
+  background: linear-gradient(135deg, #4caf50, #66bb6a);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.25);
+}
+
+.form-icon i {
+  font-size: 1.8rem;
+  color: white;
+  display: block;
+  margin: 0;
+  filter: none;
+}
+
+.form-header h1 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #222;
+  margin-bottom: 0.4rem;
+  letter-spacing: -1px;
+}
+
+.form-header p {
+  font-size: 0.95rem;
+  color: #999;
+  font-weight: 500;
+}
+
+.form-body {
+  padding: 1.5rem 2.5rem 2.5rem;
+}
+
+.input-group {
+  margin-bottom: 1.2rem;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrap i {
+  position: absolute;
+  left: 16px;
+  font-size: 0.95rem;
+  color: #bbb;
+  display: block;
+  margin: 0;
+  filter: none;
+  transition: color 0.3s;
+}
+
+.input-wrap input {
+  width: 100%;
+  padding: 14px 16px 14px 46px;
+  border: 2px solid #eee;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+  transition: all 0.3s ease;
+  outline: none;
+  background: #fafafa;
+}
+
+.input-wrap input:focus {
+  border-color: #ef4123;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(239, 65, 35, 0.08);
+}
+
+.input-wrap input:focus + i,
+.input-wrap:focus-within i {
+  color: #ef4123;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0 1.5rem;
+}
+
+.checkbox-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.checkbox-wrap input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #ef4123;
+  cursor: pointer;
+}
+
+.checkbox-wrap span {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.forgot-link {
+  font-size: 0.85rem;
+  color: #ef4123;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #ef4123, #f37021);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+  box-shadow: 0 6px 20px rgba(239, 65, 35, 0.25);
+}
+
+.btn-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(239, 65, 35, 0.35);
+}
+
+.btn-submit-green {
+  background: linear-gradient(135deg, #4caf50, #66bb6a);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.25);
+}
+
+.btn-submit-green:hover {
+  box-shadow: 0 10px 30px rgba(76, 175, 80, 0.35);
+}
+
+.form-divider {
+  text-align: center;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.form-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #eee;
+}
+
+.form-divider span {
+  background: white;
+  padding: 0 16px;
+  font-size: 0.82rem;
+  color: #bbb;
+  font-weight: 600;
+  position: relative;
+}
+
+.social-login {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-social {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+}
+
+.btn-social:hover {
+  transform: translateY(-2px);
+}
+
+.btn-kakao {
+  background: #fee500;
+  color: #3c1e1e;
+}
+
+.btn-kakao:hover {
+  box-shadow: 0 8px 20px rgba(254, 229, 0, 0.4);
+}
+
+.btn-naver {
+  background: #03c75a;
+  color: white;
+}
+
+.btn-naver:hover {
+  box-shadow: 0 8px 20px rgba(3, 199, 90, 0.3);
+}
+
+.btn-naver strong {
+  font-size: 1.1rem;
+}
+
+.form-footer-text {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.form-footer-text a {
+  color: #ef4123;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.form-footer-text a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   카다로그 페이지
+   ======================================== */
+
+.catalog-main {
+  flex-direction: column;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.catalog-hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.catalog-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #ef4123, #f37021);
+  color: white;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  border-radius: 100px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 15px rgba(239, 65, 35, 0.25);
+}
+
+.catalog-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #222;
+  letter-spacing: -2px;
+  margin-bottom: 0.5rem;
+}
+
+.catalog-hero p {
+  font-size: 1.1rem;
+  color: #888;
+  font-weight: 500;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.catalog-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.catalog-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.catalog-thumb {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.catalog-thumb i {
+  font-size: 3.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  display: block;
+  margin: 0;
+  filter: none;
+  transition: transform 0.3s ease;
+}
+
+.catalog-card:hover .catalog-thumb i {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.catalog-info {
+  padding: 1.5rem;
+  position: relative;
+}
+
+.catalog-tag {
+  display: inline-block;
+  padding: 3px 12px;
+  background: rgba(239, 65, 35, 0.1);
+  color: #ef4123;
+  font-size: 0.72rem;
+  font-weight: 800;
+  border-radius: 100px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.catalog-tag.tag-new {
+  background: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
+}
+
+.catalog-tag.tag-hot {
+  background: rgba(255, 152, 0, 0.1);
+  color: #ff9800;
+}
+
+.catalog-info h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.catalog-info p {
+  font-size: 0.9rem;
+  color: #888;
+  line-height: 1.6;
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+}
+
+.btn-catalog {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+}
+
+.btn-catalog:hover {
+  background: #ef4123;
+  color: white;
+  box-shadow: 0 5px 15px rgba(239, 65, 35, 0.2);
+}
+
+.btn-catalog i {
+  font-size: 0.85rem;
+  display: inline;
+  margin: 0;
+  filter: none;
+}
+
+/* 반응형 */
+@media (max-width: 900px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-card {
+    margin: 1rem;
+    border-radius: 24px;
+  }
+
+  .form-body {
+    padding: 1.5rem;
+  }
+}
